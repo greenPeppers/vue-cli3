@@ -1,0 +1,1 @@
+# 当前文件保存所有项目公共组建,该文件出口index.js会将该文件内所有.vue注入vue component
