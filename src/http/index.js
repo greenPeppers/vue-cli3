@@ -5,7 +5,8 @@ import {
 } from './config'
 import api from './api'
 import {
-  Message
+  Message,
+  Loading,
 } from 'element-ui'
 import errorMsg from './errorMsg'
 
@@ -14,12 +15,15 @@ export {
 }
 from './config'
 
+let loadingInstance;
 /**
  * 请求拦截
  */
 beforeRequest(config => {
-  // TODO: 请求前处理
-  // console.log('config', config);
+  // console.log(`config`, config);
+  // console.log(`isLoading`, config.isLoading);
+  // 是否开启loading
+  if (config.isLoading) loadingInstance = Loading.service({});
   return config
 }, error => error)
 
@@ -27,12 +31,21 @@ beforeRequest(config => {
  * 响应拦截
  */
 beforeResponse(response => {
-  // TODO: 数据处理
-  return response
+  loadingInstance && loadingInstance.close()
+  let res = response.data
+  if (res.code !== 200) {
+    Message({
+      message: res.message,
+      type: 'warning',
+      showClose: true
+    });
+    return false
+  } else return res.data;
 }, error => {
+  loadingInstance && loadingInstance.close()
   if (error && error.response) Message({
     message: errorMsg[error.response.status],
-    type: 'warning',
+    type: 'error',
     showClose: true
   });
   return false

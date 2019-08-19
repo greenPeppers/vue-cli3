@@ -1,14 +1,17 @@
-import Home from '@/views/Home'
+import {
+  navRouterDictionary,
+  routerDictionary,
+} from './routerDictionary'
 
-export default [
-  {
-    path: '/',
-    name: 'home',
-    component: Home
+export default [{
+  path: '/',
+  redirect: {
+    name: 'home'
   },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import(/* webpackChunkName: "about" */ '@/views/About/index.vue')
-  }
-]
+}, {
+  path: '/home',
+  name: 'home',
+  meta: navRouterDictionary.home,
+  props: true,
+  component: () => import( /* webpackChunkName: "home" */ '@/views/home'),
+}]

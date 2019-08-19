@@ -1,0 +1,27 @@
+
+$hs__theme_color: #4e7fd0;
+$hs__theme_background-color: #3D6BB7;
+
+/**
+ * 字体设置
+*/
+// 字体颜色
+$hs__font-color_black: #333;
+$hs__font-color_light-black: #999;
+$hs__font-color_gray: #859ABC;
+$hs__font-color_light-gray: #D2E3FF;
+$hs__font-color_info: #666;
+
+$hs__font-color_active: $hs__theme_color;
+$hs__font-color_title: #232836;
+
+// font-size
+$hs__font-size_small: 12px;
+$hs__font-size_normal: 14px;
+$hs__font-size_big: 16px;
+$hs__font-size_huge: 20px;
+$hs__font-size_title: 24px;
+
+// border
+$hs__box-shadow: 0px 0px 5px 0px rgba(232, 232, 232, 0.5);/*no*/
+$hs__border: 1px solid #EFEFEF;

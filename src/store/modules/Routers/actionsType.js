@@ -1,0 +1,1 @@
+export const UPDATEROUTERS = 'update routers'; // 更新总路由

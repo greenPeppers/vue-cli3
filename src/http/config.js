@@ -9,16 +9,14 @@ axios.defaults.baseURL = baseURL[process.env.NODE_ENV]
 // 允许请求携带cookie
 axios.defaults.withCredentials = true
 
-const methods = ['get', 'post', 'put', 'delete']
+const methods = ['get', 'post', 'put', 'delete', 'all']
 
 const http = {}
 
 methods.forEach(method => {
 
   http[method] = (...options) => {
-
     return axios[method](...options)
-
   }
 
 })

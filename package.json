@@ -1,17 +1,21 @@
 {
-  "name": "vue-cli3",
+  "name": "vue-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
+    "build:test": "vue-cli-service build --mode test",
     "lint": "vue-cli-service lint",
     "anaylze": "vue-cli-service build --mode anaylze"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "core-js": "^2.6.6",
-    "element-ui": "^2.8.2",
+    "@antv/g2": "^3.5.8-beta.1",
+    "axios": "^0.18.1",
+    "clipboard": "^2.0.4",
+    "core-js": "^2.6.9",
+    "element-ui": "^2.10.1",
+    "moment": "^2.24.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
@@ -25,8 +29,10 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.12.0",
+    "postcss-px2rem": "^0.3.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "webpack-theme-color-replacer": "^1.2.15"
   },
   "eslintConfig": {
     "root": true,
