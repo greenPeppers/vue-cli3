@@ -1,5 +1,5 @@
 <template>
-  <div class="layout__wrap">
+  <div class="hs-layout__wrap">
     <!-- 顶部 -->
     <header class="header" v-if="$slots.header">
       <slot name="header" />
@@ -26,6 +26,7 @@
  
 <script>
 export default {
+  name: 'hs-layout',
   data() {
     return {};
   },
@@ -40,7 +41,7 @@ export default {
 </script>
  
 <style lang='scss'>
-.layout__wrap {
+.hs-layout__wrap {
   height: 100%;
   display: flex;
   flex-direction: column;
