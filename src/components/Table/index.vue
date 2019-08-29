@@ -28,6 +28,10 @@
     <div class="hs-table__table">
       <slot />
     </div>
+    <!-- 弹框 -->
+    <div v-if="$slots.dialog">
+      <slot name="dialog"/>
+    </div>
     <!-- 分页 -->
     <div v-if="isPagination" class="hs-table__pagination">
       <el-pagination
