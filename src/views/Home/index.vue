@@ -1,5 +1,5 @@
 <template>
-  <div class=''>
+  <div ref="home" class=''>
     home
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
     }
   },
   created() {
-    
+    this.getData()
   },
   mounted() {
     
@@ -31,7 +31,10 @@ export default {
     
   },
   methods: {
-    
+    async getData() {
+      let res = await this.$http.get('http://localhost:2222/getData')
+      console.log(`res`, res);
+    }
   },
 }
 </script>
